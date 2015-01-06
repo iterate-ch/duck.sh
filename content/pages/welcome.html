@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>duck | Cyberduck CLI</title>
+        <meta name="slug" content="welcome"/>
+        <meta name="url" content="../"/>
+        <meta name="save_as" content="index.html"/>
+        <meta name="status" content="hidden"/>
+        <meta name="summary" content="Cyberduck for the command line interface (CLI)"/>
+    </head>
+
+    <body>
+        <h1 class="text-center"><span class="blink" style="opacity:0.6; color:black;">_</span><tt>duck</tt></h1>
+
+        <h4 class="text-center">
+            <a href="https://cyberduck.io/">Cyberduck</a> for the command line interface (CLI).
+        </h4>
+
+        <h3 class="text-center">
+         The universal file transfer tool <b><tt>duck</tt></b> which runs in your shell on Linux and OS X or your Windows command line prompt.
+        Edit files on remote servers, download, upload and copy between servers with FTP, SFTP or WebDAV plus support for cloud storage Amazon S3 &amp; OpenStack Swift deployments. 
+        </h3>
+
+        <h2 class="text-center">Installation</h2>
+                <ul class="nav nav-tabs" role="tablist" id="install">
+                  <li role="presentation" class="active"><a href="#mac" aria-controls="mac" role="tab" data-toggle="tab">Mac</a></li>
+                  <li role="presentation"><a href="#windows" aria-controls="mac" role="tab" data-toggle="tab">Windows</a></li>
+                  <li role="presentation"><a href="#linux" aria-controls="mac" role="tab" data-toggle="tab">Linux</a></li>
+                </ul>
+
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="mac">
+                        <p class="text-center">
+                            <pre><code onclick="selectText(this)">brew install duck</code></pre>
+                        </p>
+                        <p>Requires <a href="http://brew.sh/">Homebrew</a>. See other <a href="https://trac.cyberduck.io/wiki/help/en/howto/cli#Mac">installation options</a>.
+                    </div>    
+                    <div role="tabpanel" class="tab-pane fade" id="windows">
+                        <p class="text-center">
+                            <pre><code onclick="selectText(this)">choco install duck</code></pre>
+                        </p>
+                        <p>Requires <a href="https://chocolatey.org/">Chocolatey</a>. See other <a href="https://trac.cyberduck.io/wiki/help/en/howto/cli#Windows">installation options</a>.
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="linux">
+                        <p class="text-center">
+                        <dl class="dl-horizontal">
+                            <dt>RPM Package Repository</dt>
+                            <dd>
+                            <pre><code onclick="selectText(this)">echo -e "[duck-stable]\n\name=duck-stable\n\baseurl=https://repo.cyberduck.io/stable/\$basearch/\n\enabled=1\n\gpgcheck=0" | sudo tee /etc/yum.repos.d/duck-stable.repo > /dev/null; sudo yum install duck</code></pre>
+                    <p>Requires Yum Package Manager. See other <a href="https://trac.cyberduck.io/wiki/help/en/howto/cli#Linux">installation options</a>.
+                            </dd>
+                            <dt>DEB Package Repository</dt>
+                            <dd>
+                            <pre><code onclick="selectText(this)">echo -e "deb https://s3.amazonaws.com/repo.deb.cyberduck.io stable main" | sudo tee -a /etc/apt/sources.list > /dev/null; sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FE7097963FEFBE72; sudo apt-get update; sudo apt-get install duck</code></pre>
+                    <p>Requires APT. See other <a href="https://trac.cyberduck.io/wiki/help/en/howto/cli#Linux">installation options</a>.
+                            </dd>
+                        </dl>
+                        </p>
+                    </div>
+                </div>
+    <script>
+      $(function () {
+        $('#install input:last').tab('show')
+      })
+  function selectText(elem) {
+        if (document.selection) {
+            var range = document.body.createTextRange();
+            range.moveToElementText(elem);
+            range.select();
+        } else if (window.getSelection) {
+            var range = document.createRange();
+            range.selectNode(elem);
+            window.getSelection().addRange(range);
+        }
+      }
+          </script>
+
+        <h2 class="text-center">Further Documentation</h2>
+
+        <p class="text-center">
+            <a href="https://trac.cyberduck.io/wiki/help/en/howto/cli">
+                        <button type="button" class="btn btn-primary btn-default">Cyberduck Wiki</button>
+            </a>
+        </p>
+    </body>
+</html>
