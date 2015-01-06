@@ -6,11 +6,12 @@
     <meta name="description" content="">
     <meta name="author" content="{{ AUTHOR }}">
 
-    <script src="{{ SITEURL }}/js/jquery.min.js"></script>
+    <script src="//cdn.cyberduck.io/js/jquery.min.js"></script>
 
-    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="{{ SITEURL }}/js/html5.js"></script>
+    <script src="//cdn.cyberduck.io/js/html5shiv.js"></script>
+    <script src="//cdn.cyberduck.io/js/respond.min.js"></script>
     <![endif]-->
 
     <script src="//cdn.cyberduck.io/js/bootstrap.min.js"></script>
@@ -49,18 +50,6 @@
                             {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat}}</a>
                             </li>
                             {% endfor %}
-                            <li>
-                                <a class="navbar-link" href="https://cyberduck.io/changelog">changelog</a>
-                            </li>
-                            <li>
-                                <a class="navbar-link" href="https://blog.cyberduck.io">blog</a>
-                            </li>
-                            <li>
-                                <a class="navbar-link" href="https://trac.cyberduck.io">development</a>
-                            </li>
-                            <li>
-                                <a class="navbar-link" href="https://help.cyberduck.io">help</a>
-                            </li>
                             <li>
                                 <a class="navbar-link" href="https://cyberduck.io/donate">
                                 <button class="btn btn-success" rel="tooltip" data-placement="bottom" data-container="body" data-original-title="Receive a donation key that registers the installed application to your name and disables the donation prompt.">
