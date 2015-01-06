@@ -1,15 +1,3 @@
-body {
-    font-family: "Droid Sans", "Helvetica Neue", "Lucida Grande", "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
-}
-
-.navbar {
-	min-height: 85px;
-}
-
-h1, h2 {
-	font-weight: 550;
-}
-
 .blink {
       animation: blink 1s steps(5, start) infinite;
       -webkit-animation: blink 1s steps(5, start) infinite;
@@ -28,4 +16,8 @@ h1, h2 {
 pre {
   overflow-x: auto;
   background-color: transparent;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
 }

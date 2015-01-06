@@ -13,76 +13,78 @@
     <script src="{{ SITEURL }}/js/html5.js"></script>
     <![endif]-->
 
-    <script src="{{ SITEURL }}/js/bootstrap.min.js"></script>
+    <script src="//cdn.cyberduck.io/js/bootstrap.min.js"></script>
 
     <!-- Styles -->
-    <link href="{{ SITEURL }}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.cyberduck.io/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.cyberduck.io/css/custom.css" rel="stylesheet">
     <link href="{{ SITEURL }}/css/style.css" rel="stylesheet">
-
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700">
 
     {% include "analytics.html" %}
     {% endblock %}
 </head>
 <body>
-<div class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="{{ SITEURL }}">
-              <img src="{{ SITEURL }}/images/cyberduck-icon-60.png">
-          </a>
-        </div>
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                      <a class="navbar-brand" href="{{ SITEURL }}">
+                        <img src="//cdn.cyberduck.io/img/cyberduck-icon-64.png" class="img-responsive" width="64px" height="64px" title="Icon">
+                        </a>
+                    </div>
 
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            {% for title, link in MENUITEMS %}
-                <li><a href="{{ link }}">{{ title }}</a></li>
-            {% endfor %}
-            <li class="divider"></li>
-            {% if DISPLAY_PAGES_ON_MENU %}
-                {% for page in PAGES %}
-                    <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
-                {% endfor %}
-            {% endif %}
-            {% for cat, null in categories %}
-            <li
-            {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat
-            }}</a></li>
-            {% endfor %}
-          </ul>
-      <ul class="nav navbar-nav navbar-right">
-            <li>
-            <a href="https://cyberduck.io/donate">
-                                    <button class="btn btn-success" rel="tooltip" data-placement="bottom" data-container="body" data-original-title="Receive a donation key that registers the installed application to your name and disables the donation prompt.">
-                                        donate
-                                    </button>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            {% for title, link in MENUITEMS %}
+                            <li><a class="navbar-link" href="{{ link }}">{{ title }}</a></li>
+                            {% endfor %}
+                            {% if DISPLAY_PAGES_ON_MENU %}
+                            {% for page in PAGES %}
+                            <li><a class="navbar-link" href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+                            {% endfor %}
+                            {% endif %}
+                            {% for cat, null in categories %}
+                            <li>
+                            {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat}}</a>
+                            </li>
+                            {% endfor %}
+                            <li>
+                                <a class="navbar-link" href="https://cyberduck.io/changelog">changelog</a>
+                            </li>
+                            <li>
+                                <a class="navbar-link" href="https://blog.cyberduck.io">blog</a>
+                            </li>
+                            <li>
+                                <a class="navbar-link" href="https://trac.cyberduck.io">development</a>
+                            </li>
+                            <li>
+                                <a class="navbar-link" href="https://help.cyberduck.io">help</a>
+                            </li>
+                            <li>
+                                <a class="navbar-link" href="https://cyberduck.io/donate">
+                                <button class="btn btn-success" rel="tooltip" data-placement="bottom" data-container="body" data-original-title="Receive a donation key that registers the installed application to your name and disables the donation prompt.">
+                                donate
+                                </button>
                                 </a>
-            </li>
-      </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            {% block content %}{% endblock %}
+            <footer>
+                <a class="swissmade" href="http://www.swissmadesoftware.org"><img
+                        width="122px" height="16px" src="//media.cyberduck.io/img/sms-logo-small-footer.png"
+                        alt="swiss made software"/></a>
+                <br/>
+            </footer>
         </div>
     </div>
-</div>
-
-<div class="container">
-    <div class="sidebar">
-    </div>
-    <div class="content">
-        {% block content %}{% endblock %}
-        <footer>
-            <a class="swissmade" href="http://www.swissmadesoftware.org"><img
-                    width="122px" height="16px" src="//media.cyberduck.io/img/sms-logo-small-footer.png"
-                    alt="swiss made software"/></a>
-            <br/>
-            <small>&copy; {{ AUTHOR }}, 2014. All rights reserved.
-            </small>
-        </footer>
-    </div>
-</div>
 </body>
 </html>

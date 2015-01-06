@@ -64,4 +64,4 @@ STATIC_PATHS = ['images', 'robots.txt', 'favicon.ico']
 TYPOGRIFY = False
 
 TWITTER_USERNAME = 'cyberduckapp'
-GOOGLE_ANALYTICS = ''
+GOOGLE_ANALYTICS = 'UA-3203018-8'
