@@ -22,9 +22,9 @@
 
         <h2 class="text-center">Installation</h2>
                 <ul class="nav nav-tabs" role="tablist" id="install">
-                  <li role="presentation" class="active"><a href="#mac" aria-controls="mac" role="tab" data-toggle="tab">Mac</a></li>
-                  <li role="presentation"><a href="#windows" aria-controls="mac" role="tab" data-toggle="tab">Windows</a></li>
-                  <li role="presentation"><a href="#linux" aria-controls="mac" role="tab" data-toggle="tab">Linux</a></li>
+                  <li id="mac-select" role="presentation" class="active"><a href="#mac" aria-controls="mac" role="tab" data-toggle="tab">Mac</a></li>
+                  <li id="windows-select" role="presentation"><a href="#windows" aria-controls="mac" role="tab" data-toggle="tab">Windows</a></li>
+                  <li id="linux-select" role="presentation"><a href="#linux" aria-controls="mac" role="tab" data-toggle="tab">Linux</a></li>
                 </ul>
 
                   <!-- Tab panes -->
@@ -60,8 +60,16 @@
                 </div>
     <script>
       $(function () {
-        $('#install input:last').tab('show')
-      })
+            if(navigator.userAgent.toLowerCase().indexOf('windows') != -1) {
+                $('#install li#windows-select a').tab('show')
+            }
+            else if(navigator.userAgent.toLowerCase().indexOf('mac') != -1) {
+                $('#install li#linux-select a').tab('show')
+            }
+            else {
+                $('#install li#linux-select a').tab('show')
+            }
+        });
   function selectText(elem) {
         if (document.selection) {
             var range = document.body.createTextRange();
