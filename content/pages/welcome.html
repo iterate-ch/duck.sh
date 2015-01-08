@@ -31,7 +31,8 @@
                   <div class="tab-content">
                     <div role="tabpanel" class="tab-pane fade in active" id="mac">
                         <p class="text-center">
-                            <pre><code onclick="selectText(this)">brew tap iterate-ch/cyberduck;brew install iterate-ch/cyberduck/duck</code></pre>
+                            <pre><code onclick="selectText(this)">brew tap iterate-ch/cyberduck
+brew install duck</code></pre>
                         </p>
                         <p>Requires <a href="http://brew.sh/">Homebrew</a>. See other <a href="https://trac.cyberduck.io/wiki/help/en/howto/cli#Mac">installation options</a> to download a OS X installer package.
                     </div>    
@@ -46,12 +47,16 @@
                         <dl class="dl-horizontal">
                             <dt>RPM Package Repository</dt>
                             <dd>
-                            <pre><code onclick="selectText(this)">echo -e "[duck-stable]\n\name=duck-stable\n\baseurl=https://repo.cyberduck.io/stable/\$basearch/\n\enabled=1\n\gpgcheck=0" | sudo tee /etc/yum.repos.d/duck-stable.repo > /dev/null; sudo yum install duck</code></pre>
+                            <pre><code onclick="selectText(this)">echo -e "[duck-stable]\n\name=duck-stable\n\baseurl=https://repo.cyberduck.io/stable/\$basearch/\n\enabled=1\n\gpgcheck=0" | sudo tee /etc/yum.repos.d/duck-stable.repo > /dev/null
+sudo yum install duck</code></pre>
                     <p>Requires Yum Package Manager. See other <a href="https://trac.cyberduck.io/wiki/help/en/howto/cli#Linux">installation options</a> to download DEB and RPM packages.
                             </dd>
                             <dt>DEB Package Repository</dt>
                             <dd>
-                            <pre><code onclick="selectText(this)">echo -e "deb https://s3.amazonaws.com/repo.deb.cyberduck.io stable main" | sudo tee -a /etc/apt/sources.list > /dev/null; sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FE7097963FEFBE72; sudo apt-get update; sudo apt-get install duck</code></pre>
+                            <pre><code onclick="selectText(this)">echo -e "deb https://s3.amazonaws.com/repo.deb.cyberduck.io stable main" | sudo tee -a /etc/apt/sources.list > /dev/null
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FE7097963FEFBE72
+sudo apt-get update
+sudo apt-get install duck</code></pre>
                     <p>Requires APT. See other <a href="https://trac.cyberduck.io/wiki/help/en/howto/cli#Linux">installation options</a> to download DEB and RPM packages.
                             </dd>
                         </dl>
