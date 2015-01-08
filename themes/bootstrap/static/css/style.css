@@ -28,6 +28,6 @@ ul pre {
   border:none;
 }
 
-dt {
+.dl-horizontal dt {
   width: auto;
 }
