@@ -52,7 +52,7 @@ sudo yum install duck</code></pre>
                             </dd>
                             <dt>DEB Package Repository</dt>
                             <dd>
-                            <pre><code onclick="selectText(this)">echo -e "deb https://s3.amazonaws.com/repo.deb.cyberduck.io stable main" | sudo tee -a /etc/apt/sources.list > /dev/null
+                            <pre><code onclick="selectText(this)">echo -e "deb https://s3.amazonaws.com/repo.deb.cyberduck.io stable main" | sudo tee /etc/apt/sources.list.d/cyberduck.list > /dev/null
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FE7097963FEFBE72
 sudo apt-get update
 sudo apt-get install duck</code></pre>
