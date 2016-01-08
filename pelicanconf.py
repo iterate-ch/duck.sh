@@ -65,3 +65,8 @@ TYPOGRIFY = False
 
 TWITTER_USERNAME = 'cyberduckapp'
 GOOGLE_ANALYTICS = 'UA-3203018-8'
+
+
+PLUGINS = [
+    'minify'
+]
