@@ -75,7 +75,8 @@ sudo yum install duck</code></pre>
                             <dt>DEB Package Repository</dt>
                             <dd>
                             <pre><code onclick="selectText(this)">echo -e "deb https://s3.amazonaws.com/repo.deb.cyberduck.io stable main" | sudo tee /etc/apt/sources.list.d/cyberduck.list > /dev/null
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FE7097963FEFBE72
+sudo gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys FE7097963FEFBE72
+sudo gpg --export FE7097963FEFBE72 | sudo tee /etc/apt/trusted.gpg.d/repo.deb.cyberduck.io.gpg > /dev/null
 sudo apt-get update
 sudo apt-get install duck</code></pre>
                     <p>Requires APT. See other <a href="https://docs.duck.sh/cli/#installation">installation options</a> to download DEB and RPM packages.
